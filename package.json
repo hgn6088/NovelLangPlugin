@@ -22,8 +22,7 @@
           "novellang"
         ],
         "extensions": [
-          ".novel",
-          ".nvl"
+          ".novellang"
         ],
         "configuration": "./language-configuration.json"
       }
