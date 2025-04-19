@@ -1,0 +1,107 @@
+{
+    "name": "novellang",
+    "scopeName": "source.novellang",
+    "fileTypes": ["novel", "nvl"],
+    "patterns": [
+      {
+        "include": "#keywords"
+      },
+      {
+        "include": "#characters"
+      },
+      {
+        "include": "#settings"
+      },
+      {
+        "include": "#events"
+      },
+      {
+        "include": "#dialogue"
+      }
+    ],
+    "repository": {
+      "keywords": {
+        "patterns": [
+          {
+            "name": "keyword.control.novellang",
+            "match": "\\b(character|setting|event|timeline|scene|chapter)\\b"
+          }
+        ]
+      },
+      "characters": {
+        "patterns": [
+          {
+            "name": "entity.name.character.novellang",
+            "begin": "character\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\{",
+            "beginCaptures": {
+              "0": { "name": "keyword.control.novellang" },
+              "1": { "name": "entity.name.type.novellang" }
+            },
+            "end": "\\}",
+            "patterns": [
+              {
+                "name": "entity.other.attribute-name.novellang",
+                "match": "\\b(name|age|description|traits)\\b"
+              }
+            ]
+          }
+        ]
+      },
+      "settings": {
+        "patterns": [
+          {
+            "name": "entity.name.setting.novellang",
+            "begin": "setting\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\{",
+            "beginCaptures": {
+              "0": { "name": "keyword.control.novellang" },
+              "1": { "name": "entity.name.type.novellang" }
+            },
+            "end": "\\}",
+            "patterns": [
+              {
+                "name": "entity.other.attribute-name.novellang",
+                "match": "\\b(location|time|description)\\b"
+              }
+            ]
+          }
+        ]
+      },
+      "events": {
+        "patterns": [
+          {
+            "name": "entity.name.event.novellang",
+            "begin": "event\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\{",
+            "beginCaptures": {
+              "0": { "name": "keyword.control.novellang" },
+              "1": { "name": "entity.name.type.novellang" }
+            },
+            "end": "\\}",
+            "patterns": [
+              {
+                "name": "entity.other.attribute-name.novellang",
+                "match": "\\b(time|participants|description|consequences)\\b"
+              }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.novellang",
+            "begin": "([A-Za-z_][A-Za-z0-9_]*):\\s*\"",
+            "beginCaptures": {
+              "1": { "name": "entity.name.character.novellang" }
+            },
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.novellang",
+                "match": "\\\\."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
