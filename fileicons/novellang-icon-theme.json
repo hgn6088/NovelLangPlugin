@@ -1,0 +1,17 @@
+{
+  "iconDefinitions": {
+    "_novellang": {
+      "iconPath": "./novellang-icon.svg"
+    }
+  },
+  "file": "_file",
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "fileExtensions": {
+    "novellang": "_novellang",
+    "nvl": "_novellang"
+  },
+  "languageIds": {
+    "novellang": "_novellang"
+  }
+}
